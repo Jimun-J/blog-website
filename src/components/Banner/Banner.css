@@ -1,0 +1,88 @@
+.Banner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+}
+
+.Banner .text-wrap {
+    max-width: 1080px;
+    padding: 40px;
+}
+
+.Banner .title {
+    color: #6941C7;
+    margin-bottom: 20px;
+}
+
+.Banner .title span {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+.Banner .phrase {
+    font-size: 40px;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+}
+
+.Banner .phrase span {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;
+}
+
+.Banner .description {
+    color: #7e7e7e;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    width: 40%;
+    margin-right: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 11px;
+    background-color: #6941C7;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .Banner {
+        margin-top: 60px;
+    }
+
+    .Banner .text-wrap {
+        max-width: 1080px;
+        padding: 20px;
+    }
+
+    .Banner .phrase {
+        font-size: 32px;
+    }
+
+    .Banner .description {
+        font-size: 0.9em;
+    }
+
+    .search-input, .search-btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

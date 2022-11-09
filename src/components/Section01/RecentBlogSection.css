@@ -1,0 +1,21 @@
+.RecentBlogSection {
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+}
+
+.recent-blog-container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.recent-blog-container .title {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .recent-blog-container {
+        padding: 20px;
+    }
+}
