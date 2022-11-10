@@ -67,7 +67,7 @@ const AllBlogSection = () => {
 
     return (
         <div className="AllBlogSection">
-            <div className="title">All blog posts</div>
+            <h3 className="title">All blog posts</h3>
             <div className="all-blog-container">
                 {currentPosts.map((post, index) => (<Card post={post} key={index} />))}
             </div>
