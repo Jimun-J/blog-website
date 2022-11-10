@@ -3,6 +3,8 @@ import './HomePage.css'
 import Navbar from '../components/Navbar/Navbar'
 import Banner from '../components/Banner/Banner'
 import RecentBlogSection from '../components/Section01/RecentBlogSection'
+import AllBlogSection from '../components/Section02/AllBlogSection'
+import ProjectSection from '../components/Section03/ProjectSection'
 
 const HomePage = () => {
   return (
@@ -10,6 +12,8 @@ const HomePage = () => {
         <Navbar />
         <Banner />
         <RecentBlogSection />
+        <AllBlogSection />
+        <ProjectSection />
     </div>
   )
 }

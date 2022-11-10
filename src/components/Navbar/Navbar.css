@@ -9,9 +9,9 @@
 
 .Navbar header {
     width: 100%;
-    max-width: 1440px;
+    max-width: 1220px;
     margin: 0 auto;
-    padding: 8px 14px 8px 28px;
+    padding: 8px 30px 8px 40px;
     display: flex;
     justify-content: space-between;
 }
@@ -126,18 +126,22 @@
 
 /* table version */
 @media screen and (max-width: 768px) {
+    .logo {
+        padding-left: 5px;
+    }
     .Navbar header {
         position: fixed;
         top: 0;
         padding: 16px;
         z-index: 999;
         border-bottom: 1px solid #eee;
+        background-color: white;
     }
 
     .main-navigation {
         flex-direction: column;
         position: fixed;
-        top: 70px; 
+        top: 60px; 
         left: 0;
         width: 100%;
         height: 100vh;

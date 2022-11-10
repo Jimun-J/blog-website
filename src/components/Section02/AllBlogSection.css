@@ -1,0 +1,34 @@
+.AllBlogSection {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.AllBlogSection .title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.all-blog-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .AllBlogSection {
+        padding: 20px;
+    }
+
+    .all-blog-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .all-blog-container {
+        grid-template-columns: 1fr;
+    }
+}
