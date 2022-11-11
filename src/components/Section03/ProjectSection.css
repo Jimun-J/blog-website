@@ -6,12 +6,30 @@
 .project-section {
     max-width: 1220px;
     margin: 0 auto;
-    padding: 40px 40px 80px 40px;
+    padding: 40px;
     font-family: 'Barlow', sans-serif;
 }
 
 .text-wrap {
     margin-bottom: 20px;
+}
+
+.read-more {
+    color: #FF8F00;
+    display: block;
+    margin: 40px 0 10px 0;
+    border: 1px solid #FF8F00;
+    width: 140px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5;
+}
+
+.read-more:hover {
+    background-color: #FF8F00;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {

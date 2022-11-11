@@ -64,3 +64,20 @@ export const getAllPosts = async () => {
     const result = await request(graphqlAPI, query);
     return result.posts;
 }
+
+export const getAllProjects = async () => {
+    const query = `
+        query MyQuery {
+            projects {
+            title
+            slug
+            createdAt
+                thumbnail {
+                    url
+                }
+            }
+        }
+    `
+    const result = await request(graphqlAPI, query);
+    return result.projects;
+}

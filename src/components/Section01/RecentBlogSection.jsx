@@ -17,7 +17,7 @@ const RecentBlogSection = () => {
     return (
         <div className="RecentBlogSection">
             <div className="recent-blog-section">
-                <h3 className="title">Recent blog posts</h3>
+                <h2 className="title">Recent blog posts</h2>
                 <div className="recent-blog-container">
                     {posts.map((post, index) => (<Card post={post.node} key={index} />))}
                 </div>

@@ -16,6 +16,10 @@
     transform: translateX(-24px);
 }
 
+.react-horizontal-scrolling-menu--wrapper {
+    margin-bottom: 20px;
+}
+
 .react-horizontal-scrolling-menu--inner-wrapper {
     overflow-y: visible;
 }
@@ -31,4 +35,7 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+
+    margin-bottom: 10px;
+    gap: 10px;
 }

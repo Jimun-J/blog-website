@@ -3,7 +3,7 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import './HorizontalScrollbar.css'
 import EastIcon from '@mui/icons-material/East';
 import WestIcon from '@mui/icons-material/West';
-import Card from '../Card/Card'
+import ProjectCard from '../ProjectCard/ProjectCard';
 
 const LeftArrow = () => {
     const { scrollPrev } = useContext(VisibilityContext);
@@ -23,10 +23,10 @@ const RightArrow = () => {
     )
 }
 
-const HorizontalScrollbar = ({ posts }) => {
+const HorizontalScrollbar = ({ projects }) => {
     return (
         <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-            {posts.map((post, index) => (<Card post={post} key={index} />))}
+            {projects.map((project, index) => (<ProjectCard project={project} key={index} />))}
         </ScrollMenu>
     )
 }
