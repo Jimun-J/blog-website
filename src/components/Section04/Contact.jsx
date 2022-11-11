@@ -16,7 +16,7 @@ const Contact = () => {
                     <div className="subtitle">For all enquiries, please go to the following page and email us</div>
                 </div>
                 <div className="contact-wrap">
-                    <div>
+                    <div className="contact-img-container">
                         {/* This section can be further developed with google map api (with billing option) */}
                         <img src={MapImage} alt="google-map-location" className="map-img" />
                     </div>

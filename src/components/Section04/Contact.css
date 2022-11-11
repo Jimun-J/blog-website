@@ -49,4 +49,19 @@
     .Contact {
         padding: 20px;
     }
+
+    .contact-img-container {
+        display: none;
+    }
+
+    .contact-wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .contact-wrap {
+        grid-template-columns: 1fr;
+    }
 }

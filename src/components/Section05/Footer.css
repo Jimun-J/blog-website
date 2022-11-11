@@ -1,0 +1,17 @@
+.Footer {
+    width: 100%;
+    background-color: #F9FBFC;
+}
+
+.footer-container {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px;
+    font-family: 'Barlow', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        padding: 20px;
+    }
+}

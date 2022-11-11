@@ -6,6 +6,7 @@ import RecentBlogSection from '../components/Section01/RecentBlogSection'
 import AllBlogSection from '../components/Section02/AllBlogSection'
 import ProjectSection from '../components/Section03/ProjectSection'
 import Contact from '../components/Section04/Contact'
+import Footer from '../components/Section05/Footer'
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
         <AllBlogSection />
         <ProjectSection />
         <Contact />
+        <Footer />
     </div>
   )
 }
