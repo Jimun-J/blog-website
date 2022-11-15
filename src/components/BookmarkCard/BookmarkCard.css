@@ -1,0 +1,28 @@
+.BookmarkCard {
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s;
+    padding: 10px;
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 4px;
+}
+
+.BookmarkCard img {
+    height: 120px;
+    object-fit: cover; 
+    width: 100%;
+    border-radius: 4px;
+    margin: 0 auto;
+    transition: 0.4s;
+}
+
+.BookmarkCard .name {
+    color: black;
+    font-size: 1.3em;
+    margin: 10px 0;
+    font-family: 'Barlow', sans-serif;
+}
+
+.BookmarkCard .description {
+    font-size: 0.8em;
+}

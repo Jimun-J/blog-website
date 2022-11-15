@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Card.css'
 import { Link } from 'react-router-dom'
+import moment from 'moment';
 
 const Card = ({ post }) => {
 
@@ -25,14 +26,14 @@ const Card = ({ post }) => {
             </div>
             <div className="card-content">
                 <div className="author-date">
-                    <span className="author">{post.author.name}</span>
-                    <span className="date">{post.createdAt}</span>
+                    <span className="author">{post.author.name} &#183;</span>
+                    <span className="date"> {moment(post.createdAt).format('MMM DD, YYYY')}</span>
                 </div>
                 <div className="card-title">{post.title}</div>
                 <div className="excerpt">{excerpt}</div>
                 <div className="categories">
                     {post.categories.map((category, index) => (
-                        <span key={index}>{category.name}</span>
+                        <span key={index} className={category.name}>{category.name}</span>
                     ))}
                 </div>
             </div>

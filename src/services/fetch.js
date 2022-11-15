@@ -81,3 +81,25 @@ export const getAllProjects = async () => {
     const result = await request(graphqlAPI, query);
     return result.projects;
 }
+
+export const getAllBookmarks = async () => {
+    const query = `
+        query MyQuery {
+            bookmarks (first:20) {
+                name
+                description
+                siteUrl
+                thumbnail {
+                    url
+                }
+                bookmarkCategory {
+                    name
+                }
+            }
+        }
+      
+    `
+
+    const result = await request(graphqlAPI, query);
+    return result.bookmarks;
+}

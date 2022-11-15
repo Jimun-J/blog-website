@@ -25,6 +25,7 @@ const Navbar = () => {
                     <Link to="/">JJ.<span>Blog</span></Link>
                 </div>
                 <div className={isClicked ? 'main-navigation active' : 'main-navigation'}>
+                    <Link to="/">Home</Link>
                     <Link to="/projects">Projects</Link>
                     <Link to="/bookmarks">Bookmarks</Link>
                     <div className="subnav">
