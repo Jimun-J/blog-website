@@ -75,16 +75,17 @@
     }    
 
     .contactPage-container form {
-        width: 90%
+        width: 80%
     }
 
     .contactPage-contact {
-        margin-top: 48px;
+        margin-top: 82px;
     }
 
-    .contactPage-container .title {
+    .contactPage-contact .title {
         font-size: 2em;
     }
+
 }
 
 @media screen and (max-width: 375px) {

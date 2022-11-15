@@ -3,12 +3,13 @@
     max-width: 1220px;
     margin: 0 auto;
     padding: 40px;
+    margin-bottom: 90px;
 }
 
 .project-container .title {
     font-size: 48px;
     font-family: 'Barlow', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 90px;
 }
 
 .project-container .title span {
@@ -17,5 +18,104 @@
 
 .project-grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+}
+
+.project-card:nth-child(5n + 1) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+
+
+.project-card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.project-card:hover img {
+    transform: scale(1.2);
+}
+
+.project-card:hover .overlay {
+    opacity: 0.7;
+}
+
+.project-card .overlay {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.project-card img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.project-card .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-us {
+    color: #FF8F00;
+    display: block;
+    margin-top: 120px;
+    border: 1px solid #FF8F00;
+    width: 260px;
+    padding: 16px 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5;
+}
+
+.contact-us:hover {
+    background-color: #FF8F00;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .project-container {
+        margin: 60px 0;
+        padding: 20px;
+    }
+
+    .project-grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card:nth-child(5n + 1) {
+        grid-column-start: span 1;
+        grid-row-start: span 1;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .project-grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .contact-us {
+        margin-top: 60px;
+    }
 }

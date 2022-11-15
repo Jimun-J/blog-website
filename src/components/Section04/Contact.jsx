@@ -7,14 +7,7 @@ import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const Contact = () => {
-    const handleClick = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        })
-    }
-
+const Contact = ({ scrollToTop }) => {
     return (
         <div className="Contact">
             <div className="contact-container">
@@ -50,7 +43,7 @@ const Contact = () => {
                             hello, <br /><br />
                             For all enquiries, please go to the following page and email us
                         </div>
-                        <Link className="read-more" to="/contact" style={{ marginLeft: '20px' }} onClick={handleClick}>
+                        <Link className="read-more" to="/contact" style={{ marginLeft: '20px' }} onClick={scrollToTop}>
                             Contact
                             <CallMadeIcon style={{ fontSize: '16px', marginLeft: '5px', transform: 'translateY(3px)' }} />
                         </Link>

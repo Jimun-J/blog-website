@@ -9,7 +9,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-const ContactPage = () => {
+const ContactPage = ({ scrollToTop }) => {
     const formRef = useRef();
     const [open, setOpen] = useState(false);
     const [fail, setFail] = useState(false);
@@ -44,9 +44,12 @@ const ContactPage = () => {
 
     return (
         <div className="ContactPage">
-            <Navbar />
+            <Navbar scrollToTop={scrollToTop}/>
             <div className='contactPage-container'>
-                <div className="title">Contact</div>
+                <div className="title">
+                    Page <br />
+                    <span style={{ color: "black" }}>Contact</span>
+                </div>
                 <div className="contactPage-contact">
                     <div className="bg"></div>
                     <div className="title" style={{ color: 'black' }}>Let's Start a Conversation</div>
@@ -76,7 +79,8 @@ const ContactPage = () => {
 
                 </div>
             </div>
-            <Footer />
+            <Footer scrollToTop={scrollToTop} />
+            
             <Snackbar open={open} autoHideDuration={5000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                     You Message is Successfully Sent!

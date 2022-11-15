@@ -5,7 +5,7 @@ import HorizontalScrollbar from '../HorizontalScrollbar/HorizontalScrollbar'
 import CallMadeIcon from '@mui/icons-material/CallMade';
 
 
-const ProjectSection = ({ projects }) => {
+const ProjectSection = ({ projects, scrollToTop }) => {
     return (
         <div className="ProjectSection">
             <div className="project-section">
@@ -16,7 +16,7 @@ const ProjectSection = ({ projects }) => {
                     </div>
                 </div>
                 <HorizontalScrollbar projects={projects} />
-                <Link className="read-more" to="/projects">
+                <Link className="read-more" to="/projects" onClick={scrollToTop}>
                     Read More
                     <CallMadeIcon style={{ fontSize: '16px', marginLeft: '5px', transform: 'translateY(3px)' }} />
                 </Link>

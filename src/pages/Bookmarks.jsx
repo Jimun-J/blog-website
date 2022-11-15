@@ -6,7 +6,7 @@ import Menu from '../assets/menu.svg'
 import MenuList from '../assets/menu-list.svg'
 import './Bookmarks.css'
 
-const Bookmarks = ({ bookmarks }) => {
+const Bookmarks = ({ bookmarks, scrollToTop }) => {
     const [isClicked, setIsClicked] = useState(false);
 
     const handleClick = (e) => {
@@ -15,7 +15,7 @@ const Bookmarks = ({ bookmarks }) => {
 
     return (
         <div className="Bookmarks">
-            <Navbar />
+            <Navbar scrollToTop={scrollToTop}/>
             <div className="bookmarks-container">
                 <div className="title">
                     <span>Designer<br /></span>
@@ -52,7 +52,7 @@ const Bookmarks = ({ bookmarks }) => {
                     ))}
                 </div>
             </div>
-            <Footer />
+            <Footer scrollToTop={scrollToTop} />
         </div>
     )
 }

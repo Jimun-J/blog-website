@@ -6,7 +6,7 @@ import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstruct
 import WebIcon from '@mui/icons-material/Web';
 import DescriptionIcon from '@mui/icons-material/Description';
 
-const Navbar = () => {
+const Navbar = ({ scrollToTop }) => {
     const [isClicked, setIsClicked] = useState(false);
     const [subnavClicked, setSubnavClicked] = useState(false);
 
@@ -22,12 +22,12 @@ const Navbar = () => {
         <div className="Navbar">
             <header>
                 <div className="logo">
-                    <Link to="/">JJ.<span>Blog</span></Link>
+                    <Link to="/" onClick={scrollToTop}>JJ.<span>Blog</span></Link>
                 </div>
                 <div className={isClicked ? 'main-navigation active' : 'main-navigation'}>
-                    <Link to="/">Home</Link>
-                    <Link to="/projects">Projects</Link>
-                    <Link to="/bookmarks">Bookmarks</Link>
+                    <Link to="/" onClick={scrollToTop}>Home</Link>
+                    <Link to="/projects" onClick={scrollToTop}>Projects</Link>
+                    <Link to="/bookmarks" onClick={scrollToTop}>Bookmarks</Link>
                     <div className="subnav">
                         <Link 
                             className={subnavClicked ? 'subnavbtn active' : 'subnavbtn'}
@@ -36,21 +36,21 @@ const Navbar = () => {
                                 Blogs<i className="icon"></i>
                         </Link>
                         <div className={subnavClicked ? 'subnav-content active' : 'subnav-content'}>
-                            <Link to="/blogs/web-development">
+                            <Link to="/blogs/web-development" onClick={scrollToTop}>
                                 <IntegrationInstructionsIcon style={{ fontSize: 'medium', verticalAlign: 'middle', marginRight: '4px' }}/>
                                 Web Development 
                                 <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }}/>
                             </Link>
-                            <Link to="/blogs/web-design">
+                            <Link to="/blogs/web-design" onClick={scrollToTop}>
                                 <WebIcon style={{ fontSize: 'medium', verticalAlign: 'middle', marginRight: '4px' }} />
                                 Web Design 
                                 <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }} />
                             </Link>
-                            <Link to="/blogs/projects">
+                            <Link to="/blogs/projects" onClick={scrollToTop}>
                                 <DescriptionIcon style={{ fontSize: 'medium', verticalAlign: 'middle', marginRight: '4px' }} />
                                 Projects <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }}/>
                             </Link>
-                            <Link to="/blogs">
+                            <Link to="/blogs" onClick={scrollToTop}>
                                 View All <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }}/>
                             </Link>
                         </div>

@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 import Pagination from '@mui/material/Pagination';
 import { Stack } from '@mui/material';
 
-const AllBlogSection = ({ posts }) => {
+const AllBlogSection = ({ posts, scrollToTop }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(6);
     const [width, setWidth] = useState(window.innerWidth);
@@ -57,7 +57,7 @@ const AllBlogSection = ({ posts }) => {
         <div className="AllBlogSection">
             <h2 className="title">All blog posts</h2>
             <div className="all-blog-container">
-                {currentPosts.map((post, index) => (<Card post={post} key={index} />))}
+                {currentPosts.map((post, index) => (<Card post={post} key={index} onClick={scrollToTop} />))}
             </div>
             <Stack sx={{ mt: { lg: '70px', xs: '60px' } }} alignItems="center">
                 {posts.length > 3 && (
