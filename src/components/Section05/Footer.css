@@ -102,9 +102,7 @@ ul li a:hover {
     .social {
         margin-right: 30px;
     }
-}
 
-@media screen and (max-width: 375px) {
     .scrollTop {
         right: 50%;
         transform: translateX(50%);

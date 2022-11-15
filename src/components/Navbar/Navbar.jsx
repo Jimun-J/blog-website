@@ -18,6 +18,12 @@ const Navbar = ({ scrollToTop }) => {
         setSubnavClicked(current => !current);
     }
 
+    const hideSubnav = () => {
+        setSubnavClicked(current => !current);
+        setIsClicked(current => !current);
+        scrollToTop();
+    }
+
     return (
         <div className="Navbar">
             <header>
@@ -36,21 +42,21 @@ const Navbar = ({ scrollToTop }) => {
                                 Blogs<i className="icon"></i>
                         </Link>
                         <div className={subnavClicked ? 'subnav-content active' : 'subnav-content'}>
-                            <Link to="/blogs/web-development" onClick={scrollToTop}>
+                            <Link to="/blogs/web-development" onClick={hideSubnav}>
                                 <IntegrationInstructionsIcon style={{ fontSize: 'medium', verticalAlign: 'middle', marginRight: '4px' }}/>
                                 Web Development 
                                 <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }}/>
                             </Link>
-                            <Link to="/blogs/web-design" onClick={scrollToTop}>
+                            <Link to="/blogs/web-design" onClick={hideSubnav}>
                                 <WebIcon style={{ fontSize: 'medium', verticalAlign: 'middle', marginRight: '4px' }} />
                                 Web Design 
                                 <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }} />
                             </Link>
-                            <Link to="/blogs/projects" onClick={scrollToTop}>
+                            <Link to="/blogs/projects" onClick={hideSubnav}>
                                 <DescriptionIcon style={{ fontSize: 'medium', verticalAlign: 'middle', marginRight: '4px' }} />
                                 Projects <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }}/>
                             </Link>
-                            <Link to="/blogs" onClick={scrollToTop}>
+                            <Link to="/blogs/all" onClick={hideSubnav}>
                                 View All <ArrowOutwardIcon style={{ fontSize: 'medium', float: 'right' }}/>
                             </Link>
                         </div>

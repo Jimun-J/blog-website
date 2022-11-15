@@ -1,0 +1,38 @@
+.blog-container {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px;
+    margin-bottom: 90px;
+}
+
+.blog-container .title {
+    font-size: 48px;
+    font-family: 'Barlow', sans-serif;
+    margin-bottom: 90px;
+    text-transform: capitalize;
+}
+
+.blog-container .title span {
+    color: grey;
+}
+
+.blog-container .AllBlogSection {
+    padding: 0;
+}
+
+.blog-container .AllBlogSection .title {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-container {
+        padding: 20px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}

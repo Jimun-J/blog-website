@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './AllBlogSection.css'
 
-import Card from '../Card/Card';
+import Card from '../PostCard/Card';
 import Pagination from '@mui/material/Pagination';
 import { Stack } from '@mui/material';
 

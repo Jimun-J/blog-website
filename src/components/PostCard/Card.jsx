@@ -31,9 +31,9 @@ const Card = ({ post }) => {
                 </div>
                 <div className="card-title">{post.title}</div>
                 <div className="excerpt">{excerpt}</div>
-                <div className="categories">
-                    {post.categories.map((category, index) => (
-                        <span key={index} className={category.name}>{category.name}</span>
+                <div className="tags">
+                    {post.postTags.map((tag, index) => (
+                        <span key={index} className={tag.name}>{tag.name}</span>
                     ))}
                 </div>
             </div>

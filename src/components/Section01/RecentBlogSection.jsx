@@ -1,6 +1,6 @@
 import React from 'react'
 import './RecentBlogSection.css'
-import Card from '../Card/Card'
+import Card from '../PostCard/Card'
 
 const RecentBlogSection = ({ posts, scrollToTop }) => {
     return (

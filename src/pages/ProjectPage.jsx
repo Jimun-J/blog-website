@@ -12,7 +12,7 @@ const ProjectPage = ({ projects, scrollToTop }) => {
             <div className="project-container">
                 <div className="title">
                     <span>Featured<br /></span>
-                    Project
+                    Projects
                 </div>
                 <div className="project-grid-container">
                     {projects.map((project, index) => (

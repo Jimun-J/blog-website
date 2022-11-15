@@ -6,7 +6,7 @@ import Menu from '../assets/menu.svg'
 import MenuList from '../assets/menu-list.svg'
 import './Bookmarks.css'
 
-const Bookmarks = ({ bookmarks, scrollToTop }) => {
+const Bookmarks = ({ codingBookmarks, imageBookmarks, colorBookmarks, designBookmarks, scrollToTop }) => {
     const [isClicked, setIsClicked] = useState(false);
 
     const handleClick = (e) => {
@@ -29,25 +29,25 @@ const Bookmarks = ({ bookmarks, scrollToTop }) => {
                 </div>
                 <div className="category-name" style={{ marginTop: "48px"}}>Design-Reference</div>
                 <div className={isClicked ? "container-list" : "container-grid"}>
-                    {bookmarks.slice(0, 4).map((bookmark, index) => (
+                    {designBookmarks.map((bookmark, index) => (
                         <BookmarkCard key={index} bookmark={bookmark} />
                     ))}
                 </div>
                 <div className="category-name">Color & Gradation</div>
                 <div className={isClicked ? "container-list" : "container-grid"}>
-                    {bookmarks.slice(4, 6).map((bookmark, index) => (
+                    {colorBookmarks.map((bookmark, index) => (
                         <BookmarkCard key={index} bookmark={bookmark} />
                     ))}
                 </div>
                 <div className="category-name">Free Stock Images</div>
                 <div className={isClicked ? "container-list" : "container-grid"}>
-                    {bookmarks.slice(6, 9).map((bookmark, index) => (
+                    {imageBookmarks.map((bookmark, index) => (
                         <BookmarkCard key={index} bookmark={bookmark} />
                     ))}
                 </div>
                 <div className="category-name">Coding</div>
                 <div className={isClicked ? "container-list" : "container-grid"}>
-                    {bookmarks.slice(9, 12).map((bookmark, index) => (
+                    {codingBookmarks.map((bookmark, index) => (
                         <BookmarkCard key={index} bookmark={bookmark} />
                     ))}
                 </div>
