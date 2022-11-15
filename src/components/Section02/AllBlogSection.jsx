@@ -1,26 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './AllBlogSection.css'
 
-import { getAllPosts } from '../../services/fetch'
 import Card from '../Card/Card';
-
 import Pagination from '@mui/material/Pagination';
 import { Stack } from '@mui/material';
 
-const AllBlogSection = () => {
-    const [posts, setPosts] = useState([]);
+const AllBlogSection = ({ posts }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(6);
     const [width, setWidth] = useState(window.innerWidth);
-
-    // get all posts
-    useEffect(() => {
-        const fetchPosts = async () => {
-            setPosts(await getAllPosts());
-        }
-
-        fetchPosts();
-    }, []);
 
     // update window width
     // code from: https://stackoverflow.com/questions/60642486/react-hooks-useeffect-update-window-innerheight

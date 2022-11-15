@@ -14,3 +14,8 @@
 .project-container .title span {
     color: grey;
 }
+
+.project-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

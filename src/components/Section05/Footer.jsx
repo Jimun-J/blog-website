@@ -35,7 +35,7 @@ const Footer = () => {
             <h2>Please feel free to inquire</h2>
             <div>wkdwlans009@gmail.com</div>
             <div className="logo">
-              <Link to="/">JJ.<span>Blog</span></Link>
+              <Link to="/" onClick={handleClick}>JJ.<span>Blog</span></Link>
             </div>
           </div>
 
@@ -51,9 +51,9 @@ const Footer = () => {
             <div className="resource">
               <div className="list-name">Resources</div>
               <ul>
-                <li><Link to="/blogs">Blogs</Link></li>
-                <li><Link to="/projects">Projects</Link></li>
-                <li><Link to="/bookmarks">Bookmarks</Link></li>
+                <li><Link to="/blogs" onClick={handleClick}>Blogs</Link></li>
+                <li><Link to="/projects" onClick={handleClick}>Projects</Link></li>
+                <li><Link to="/bookmarks" onClick={handleClick}>Bookmarks</Link></li>
               </ul>
             </div>
           </div>

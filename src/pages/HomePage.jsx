@@ -8,14 +8,14 @@ import ProjectSection from '../components/Section03/ProjectSection'
 import Contact from '../components/Section04/Contact'
 import Footer from '../components/Section05/Footer'
 
-const HomePage = () => {
+const HomePage = ({ projects, recentPosts, allPosts }) => {
   return (
     <div className="HomePage">
         <Navbar />
         <Banner />
-        <RecentBlogSection />
-        <AllBlogSection />
-        <ProjectSection />
+        <RecentBlogSection posts={recentPosts} />
+        <AllBlogSection posts={allPosts} />
+        <ProjectSection projects={projects}/>
         <Contact />
         <Footer />
     </div>

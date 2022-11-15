@@ -1,28 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import Footer from '../components/Section05/Footer'
 import BookmarkCard from '../components/BookmarkCard/BookmarkCard'
 import Menu from '../assets/menu.svg'
 import MenuList from '../assets/menu-list.svg'
-import { getAllBookmarks } from '../services/fetch'
 import './Bookmarks.css'
 
-const Bookmarks = () => {
+const Bookmarks = ({ bookmarks }) => {
     const [isClicked, setIsClicked] = useState(false);
-    const [bookmarks, setBookmarks] = useState([]);
 
     const handleClick = (e) => {
         setIsClicked(current => !current);
     }
-
-    // get all posts
-    useEffect(() => {
-        const fetchBookmarks = async () => {
-            setBookmarks(await getAllBookmarks());
-        }
-
-        fetchBookmarks();
-    }, []);
 
     return (
         <div className="Bookmarks">

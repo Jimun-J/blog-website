@@ -1,23 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './ProjectSection.css'
 import HorizontalScrollbar from '../HorizontalScrollbar/HorizontalScrollbar'
-import { getAllProjects } from '../../services/fetch'
 import CallMadeIcon from '@mui/icons-material/CallMade';
 
 
-const ProjectSection = () => {
-    const [projects, setProjects] = useState([]);
-    // get all posts
-    useEffect(() => {
-        const fetchProjects = async () => {
-            setProjects(await getAllProjects());
-        }
-
-        fetchProjects();
-    }, []);
-
-
+const ProjectSection = ({ projects }) => {
     return (
         <div className="ProjectSection">
             <div className="project-section">

@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './RecentBlogSection.css'
 import Card from '../Card/Card'
-import { getRecentPosts } from '../../services/fetch'
 
-const RecentBlogSection = () => {
-    const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            setPosts(await getRecentPosts());
-        }
-
-        fetchPosts();
-    }, []);
-
+const RecentBlogSection = ({ posts }) => {
     return (
         <div className="RecentBlogSection">
             <div className="recent-blog-section">
