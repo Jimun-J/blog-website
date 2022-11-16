@@ -1,0 +1,169 @@
+.blog-post-container {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 40px;
+    margin-bottom: 90px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.header {
+    margin: 0 0 40px 0;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px;
+}
+
+.header .title {
+    font-size: 3em;
+    font-weight: bold;
+    word-wrap: break-word;
+    color: #eee;
+}
+
+.header .date {
+    color: #ebebeb;
+}
+
+.header .tags {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+.header .tag {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    background-color: #8a8a8a;
+    padding: 5px;
+    border-radius: 4px;
+    color: #eee;
+}
+
+.header .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.header .author, 
+.header .title, 
+.header .date, 
+.header .tags {
+    z-index: 100;
+    position: relative;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author-photo {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+}
+
+.author-photo img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.author-name {
+    color: white;
+}
+
+.section {
+    margin-bottom: 48px;
+    word-wrap: break-word;
+}
+
+.section a {
+    color: #4A65D0;
+    font-weight: 400;
+}
+
+.content * {
+    word-wrap: break-word;
+}
+
+.content a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.content blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+.content code, .content pre {
+    background-color: #aaa;
+    font-family: "Source Code Pro", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+    color: rgb(25, 28, 44);
+    background-color: rgb(250, 251, 255);
+    border-radius: 4px;
+    border: 1px solid rgb(208, 213, 231);
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 3px;
+}
+
+.content img {
+    display: block;
+    margin: 20px 0;
+    max-width: 100%;
+}
+
+.content ul li {
+    list-style-type: initial;
+}
+
+.content ul, .content ol {
+    margin-left: 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .blog-post-container {
+        padding: 20px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .header {
+        margin: 0 0 40px 0;
+        min-height: 280px;
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .header {
+        padding: 12px;
+    }
+
+    .header .title {
+        font-size: 2em;
+    }
+
+    .header .date {
+        font-size: 0.9em;
+    }
+
+    .header .tags {
+        font-size: 0.8em;
+    }
+}

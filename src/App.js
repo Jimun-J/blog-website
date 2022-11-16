@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
+
 import HomePage from './pages/HomePage'
 import Bookmarks from './pages/Bookmarks'
 import ProjectPage from './pages/ProjectPage'
 import ContactPage from './pages/ContactPage'
 import BlogPage from './pages/BlogPage'
+import BlogPost from './pages/BlogPost'
+
 import { 
   getAllProjects, getRecentPosts, getAllPosts, 
   getCodingBookmarks, getDesignBookmarks, getColorBookmarks, getImageBookmarks,
@@ -65,6 +68,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage scrollToTop={scrollToTop} />} />
 
         <Route path="/blogs/:category" element={<BlogPage scrollToTop={scrollToTop} />}/>
+        <Route path="/post/:id" element={<BlogPost scrollToTop={scrollToTop} />}/>
       </Routes>
     </div>
   )

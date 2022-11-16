@@ -20,7 +20,7 @@ const Card = ({ post }) => {
     }, [post]);
 
     return (
-        <Link to={"/blogs/" + post.slug} className="Card">
+        <Link to={"/post/" + post.slug} className="Card">
             <div className="thumbnail-container">
                 <img className="thumbnail" src={post.thumbnail.url} alt="" />
             </div>

@@ -16,7 +16,7 @@ const ProjectPage = ({ projects, scrollToTop }) => {
                 </div>
                 <div className="project-grid-container">
                     {projects.map((project, index) => (
-                        <Link className="project-card" to={"/blogs/" + project.slug} key={index} onClick={scrollToTop}>
+                        <Link className="project-card" to={"/project/" + project.slug} key={index} onClick={scrollToTop}>
                             <img className="thumbnail" src={project.thumbnail.url} alt="" />
                             <div className="overlay"></div>
                             <div className="text-wrap">

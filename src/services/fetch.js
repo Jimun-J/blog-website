@@ -263,3 +263,33 @@ export const getCodingBookmarks = async () => {
     const result = await request(graphqlAPI, query);
     return result.bookmarks;
 }
+
+export const getPost = async (slug) => {
+    const query = `
+        query MyQuery {
+            post(where: {slug: "${slug}"}) {
+                thumbnail {
+                    url
+                }
+                author {
+                    name
+                    photo {
+                        url
+                    }
+                }
+                title
+                createdAt
+                content {
+                    raw
+                }
+                postTags {
+                    name
+                }
+            }
+        }
+    
+    `
+    const result = await request(graphqlAPI, query);
+    console.log(result);
+    return result.post;
+}
