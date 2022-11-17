@@ -32,7 +32,7 @@ const Footer = ({ scrollToTop }) => {
             <div className="resource">
               <div className="list-name">Resources</div>
               <ul>
-                <li><Link to="/blogs" onClick={scrollToTop}>Blogs</Link></li>
+                <li><Link to="/blogs/all" onClick={scrollToTop}>Blogs</Link></li>
                 <li><Link to="/projects" onClick={scrollToTop}>Projects</Link></li>
                 <li><Link to="/bookmarks" onClick={scrollToTop}>Bookmarks</Link></li>
               </ul>

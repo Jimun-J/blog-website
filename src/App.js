@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage'
 import BlogPage from './pages/BlogPage'
 import BlogPost from './pages/BlogPost'
 import ProjectPost from './pages/ProjectPost'
+import SearchPage from './pages/SearchPage'
 
 import { 
   getAllProjects, getRecentPosts, getAllPosts, 
@@ -55,6 +56,7 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage projects={projects} recentPosts={recentPosts} allPosts={allPosts} scrollToTop={scrollToTop} />} />
+        <Route path="/search/:input" element={<SearchPage scrollToTop={scrollToTop} />} />
         
         <Route path="/bookmarks" element={
           <Bookmarks 

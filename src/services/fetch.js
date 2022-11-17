@@ -312,3 +312,33 @@ export const getProject = async (slug) => {
     const result = await request(graphqlAPI, query);
     return result.project;
 }
+
+export const getResultByTagName = async (input) => {
+    const query = `
+        query MyQuery {
+            posts(where: {postTags_some: {name: "${input}"}}) {
+                title
+                slug
+                excerpt
+            }
+        }
+      
+    `
+    const result = await request(graphqlAPI, query);
+    return result.posts;
+}
+
+export const getResultByTitleName = async (input) => {
+    const query = `
+        query MyQuery {
+            posts(where: {title_contains: "${input}"}) {
+                title
+                slug
+                excerpt
+            }
+        }
+      
+    `
+    const result = await request(graphqlAPI, query);
+    return result.posts;
+}
