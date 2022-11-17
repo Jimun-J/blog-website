@@ -57,33 +57,6 @@ ul li a:hover {
     font-size: 0.8em;
 }
 
-.scrollTop {
-    border-radius: 50%;
-    background-color: white;
-    height: 48px;
-    position: fixed;
-    right: 48px;
-    bottom: 36px;
-    opacity: 0;
-    transition: 0.5s;
-    pointer-events: none;
-}
-
-.scrollTop.active {
-    opacity: 1;
-    pointer-events: initial;
-}
-
-.scrollTop svg {
-    background-color: #6941c740;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    padding: 8px;
-    box-shadow: 2px 0px 4px 0px rgba(0,0,0,0.2);
-    cursor: pointer;
-    color: #6941C7;
-}
 
 @media screen and (max-width: 768px) {
     .footer-container {
@@ -101,11 +74,5 @@ ul li a:hover {
 
     .social {
         margin-right: 30px;
-    }
-
-    .scrollTop {
-        right: 50%;
-        transform: translateX(50%);
-        bottom: 10px;
     }
 }

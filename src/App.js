@@ -8,11 +8,13 @@ import ProjectPage from './pages/ProjectPage'
 import ContactPage from './pages/ContactPage'
 import BlogPage from './pages/BlogPage'
 import BlogPost from './pages/BlogPost'
+import ProjectPost from './pages/ProjectPost'
 
 import { 
   getAllProjects, getRecentPosts, getAllPosts, 
   getCodingBookmarks, getDesignBookmarks, getColorBookmarks, getImageBookmarks,
 } from './services/fetch'
+
 
 const App = () => {
   const [projects, setProjects] = useState([]);
@@ -69,6 +71,7 @@ const App = () => {
 
         <Route path="/blogs/:category" element={<BlogPage scrollToTop={scrollToTop} />}/>
         <Route path="/post/:id" element={<BlogPost scrollToTop={scrollToTop} />}/>
+        <Route path="/project/:id" element={<ProjectPost scrollToTop={scrollToTop} />}/>
       </Routes>
     </div>
   )

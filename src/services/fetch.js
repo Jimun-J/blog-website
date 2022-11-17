@@ -290,6 +290,25 @@ export const getPost = async (slug) => {
     
     `
     const result = await request(graphqlAPI, query);
-    console.log(result);
     return result.post;
+}
+
+export const getProject = async (slug) => {
+    const query =`
+        query MyQuery {
+            project(where: {slug: "${slug}"}) {
+                title
+                thumbnail {
+                    url
+                }
+                content {
+                    raw
+                }
+                createdAt
+            }
+        }
+      
+    `
+    const result = await request(graphqlAPI, query);
+    return result.project;
 }

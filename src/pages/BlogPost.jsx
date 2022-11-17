@@ -1,23 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import './BlogPost.css'
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getPost } from '../services/fetch';
 import moment from 'moment';
 import Navbar from '../components/Navbar/Navbar';
 import Loader from '../components/Loader/Loader';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { Link } from 'react-router-dom'
+import WestIcon from '@mui/icons-material/West';
 
 const BlogPost = ({ scrollToTop }) => {
     const { id } = useParams();
     const [post, setPost] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
-            setPost(await getPost(id));
+            let post = await getPost(id);
+            if (post === null) {
+                navigate('/blogs/all');
+            } else {
+                setPost(post);
+            }
         }
         fetchData();
-    }, [id]);
+    }, [id, navigate]);
 
     if (Object.keys(post).length === 0) {
         return <Loader />;
@@ -53,7 +60,7 @@ const BlogPost = ({ scrollToTop }) => {
                 </div>
 
                 <div className="section">
-                    <Link>Home</Link> - <Link>Blog</Link> - {post.title}
+                    <Link to="/">Home</Link> - <Link to="/blogs/all">Blog</Link> - {post.title}
                 </div>
 
 
@@ -62,6 +69,11 @@ const BlogPost = ({ scrollToTop }) => {
                         content={post.content.raw.children}
                     />
                 </div>
+
+                <Link className="read-more" to="/blogs/all" style={{ width: '210px'}} onClick={scrollToTop}>
+                    <WestIcon style={{ fontSize: '18px', marginRight: '5px', transform: 'translateY(1px)'}}/>
+                    Back to Blogs
+                </Link>
             </div>
 
         </div>

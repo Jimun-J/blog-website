@@ -135,6 +135,10 @@
     margin-left: 20px;
 }
 
+.back-btn .read-more {
+    width: 260px;
+}
+
 
 @media screen and (max-width: 768px) {
     .blog-post-container {

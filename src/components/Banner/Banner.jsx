@@ -11,7 +11,7 @@ const Banner = () => {
                     This personal blog is to learn about the latest technology, tips, and updates needed for full stack web development.
                 </div>
                 <div className="search">
-                    <input type="text" placeholder='Search posts by title' className="search-input" autoComplete='off' />
+                    <input type="text" placeholder='Search posts by title, tags' className="search-input" autoComplete='off' />
                     <button className="search-btn">Search</button>
                 </div>
             </div>
