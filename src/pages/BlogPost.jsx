@@ -8,11 +8,17 @@ import Loader from '../components/Loader/Loader';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 import { Link } from 'react-router-dom'
 import WestIcon from '@mui/icons-material/West';
+import Prism from "prismjs";
+import './prism.css';
 
 const BlogPost = ({ scrollToTop }) => {
     const { id } = useParams();
     const [post, setPost] = useState({});
     const navigate = useNavigate();
+
+    useEffect(() => {
+        Prism.highlightAll();
+    }, [post])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -67,6 +73,9 @@ const BlogPost = ({ scrollToTop }) => {
                 <div className="content">
                     <RichText
                         content={post.content.raw.children}
+                        renderers={{
+                            code_block: ({ children }) => <pre className="language-javascript"><code className="language-javascript">{ children }</code></pre>
+                        }}
                     />
                 </div>
 
