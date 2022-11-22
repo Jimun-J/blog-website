@@ -72,7 +72,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage scrollToTop={scrollToTop} />} />
 
         <Route path="/blogs/:category" element={<BlogPage scrollToTop={scrollToTop} />}/>
-        <Route path="/post/:id" element={<BlogPost scrollToTop={scrollToTop} />}/>
+        <Route path="/post/:id" element={<BlogPost scrollToTop={scrollToTop}  recentPosts={recentPosts}/>}/>
         <Route path="/project/:id" element={<ProjectPost scrollToTop={scrollToTop} />}/>
       </Routes>
     </div>

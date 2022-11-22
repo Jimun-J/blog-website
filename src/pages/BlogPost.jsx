@@ -11,14 +11,14 @@ import WestIcon from '@mui/icons-material/West';
 import Prism from "prismjs";
 import './prism.css';
 
-const BlogPost = ({ scrollToTop }) => {
+const BlogPost = ({ scrollToTop, recentPosts }) => {
     const { id } = useParams();
     const [post, setPost] = useState({});
     const navigate = useNavigate();
 
     useEffect(() => {
         Prism.highlightAll();
-    }, [post])
+    }, [post, id]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -40,7 +40,8 @@ const BlogPost = ({ scrollToTop }) => {
         <div className="BlogPost">
             <Navbar scrollToTop={scrollToTop} />
             <div className="blog-post-container">
-                <div className="header" style={{
+                <div className="content-container">
+                    <div className="header" style={{
                         backgroundImage: `url(${post.thumbnail.url})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
@@ -48,43 +49,69 @@ const BlogPost = ({ scrollToTop }) => {
                         borderRadius: '6px',
                         position: 'relative'
                     }}>
-                    <div className="overlay"></div>
-                    <div className="title">{post.title}</div>
-                    <div className="date">Posted: {moment(post.createdAt).format('MMM DD, YYYY')}</div>
-                    <div className="tags">
-                        {post.postTags.map((tag, index) => (
-                            <div className="tag" key={index}>{tag.name}</div>
+                        <div className="overlay"></div>
+                        <div className="title">{post.title}</div>
+                        <div className="date">Posted: {moment(post.createdAt).format('MMM DD, YYYY')}</div>
+                        <div className="tags">
+                            {post.postTags.map((tag, index) => (
+                                <div className="tag" key={index}>{tag.name}</div>
+                            ))}
+                        </div>
+
+                        <div className="author">
+                            <div className="author-photo">
+                                <img src={post.author.photo.url} alt="" />
+                            </div>
+                            <div className="author-name">{post.author.name}</div>
+                        </div>
+                    </div>
+
+                    <div className="section">
+                        <Link to="/">Home</Link> - <Link to="/blogs/all">Blog</Link> - {post.title}
+                    </div>
+
+
+                    <div className="content">
+                        { post.postCategory.name === "Web Design" ? 
+                            <RichText
+                                content={post.content.raw.children}
+                                renderers={{
+                                    code_block: ({ children }) => <pre data-dependencies="jsx" className="language-html"><code className="language-html">{children}</code></pre>
+                                }}
+                            /> 
+                            : 
+                            <RichText
+                            content={post.content.raw.children}
+                            renderers={{
+                                code_block: ({ children }) => <pre data-dependencies="jsx" className="language-javascript"><code className="language-javascript">{children}</code></pre>
+                            }} />
+                        }
+                        
+                    </div>
+
+                    <Link className="read-more" to="/blogs/all" style={{ width: '210px' }} onClick={scrollToTop}>
+                        <WestIcon style={{ fontSize: '18px', marginRight: '5px', transform: 'translateY(1px)' }} />
+                        Back to Blogs
+                    </Link>
+                </div>
+                <div className="float-right">
+                    <div className="fixed">
+                        <h2>More from Recent Posts</h2>
+                        {recentPosts.map((post, index) => (
+                            <Link to={"/post/" + post.node.slug} className="Card">
+                                <div className="card-content">
+                                    <div className="card-title">
+                                        <div>
+                                            <span className="author">{post.node.author.name} &#183; {moment(post.node.createdAt).format('MMM DD, YYYY')}</span>
+                                            <div>{post.node.title}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
                         ))}
                     </div>
-
-                    <div className="author">
-                        <div className="author-photo">
-                            <img src={post.author.photo.url} alt="" />
-                        </div>
-                        <div className="author-name">{post.author.name}</div>
-                    </div>
                 </div>
-
-                <div className="section">
-                    <Link to="/">Home</Link> - <Link to="/blogs/all">Blog</Link> - {post.title}
-                </div>
-
-
-                <div className="content">
-                    <RichText
-                        content={post.content.raw.children}
-                        renderers={{
-                            code_block: ({ children }) => <pre className="language-javascript"><code className="language-javascript">{ children }</code></pre>
-                        }}
-                    />
-                </div>
-
-                <Link className="read-more" to="/blogs/all" style={{ width: '210px'}} onClick={scrollToTop}>
-                    <WestIcon style={{ fontSize: '18px', marginRight: '5px', transform: 'translateY(1px)'}}/>
-                    Back to Blogs
-                </Link>
             </div>
-
         </div>
     )
 }

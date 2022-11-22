@@ -285,6 +285,9 @@ export const getPost = async (slug) => {
                 postTags {
                     name
                 }
+                postCategory {
+                    name
+                }
             }
         }
     
